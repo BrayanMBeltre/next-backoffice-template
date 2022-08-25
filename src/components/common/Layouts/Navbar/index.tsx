@@ -10,6 +10,7 @@ import {
   IconGauge,
   IconLock,
   IconNotes,
+  IconPlayCard,
   IconPresentationAnalytics,
 } from '@tabler/icons';
 
@@ -48,6 +49,11 @@ const mockdata: Array<LinksGroupProps> = [
       { label: 'Change password', href: '/page2' },
       { label: 'Recovery codes', href: '/page3' },
     ],
+  },
+  {
+    label: 'Playground',
+    href: '/playground',
+    icon: IconPlayCard,
   },
 ];
 

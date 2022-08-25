@@ -7,6 +7,8 @@ import { ReactElement, ReactNode } from 'react';
 
 import MantineProvider from '@/lib/providers/MantineProvider';
 
+import { RouterTransition } from '@/components/common/Layouts/RouterTransition';
+
 export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -31,6 +33,7 @@ const App = (props: AppPropsWithLayout) => {
         />
       </Head>
       <MantineProvider colorScheme={colorScheme}>
+        <RouterTransition />
         {getLayout(<Component {...pageProps} />)}
       </MantineProvider>
     </>

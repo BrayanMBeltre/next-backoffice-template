@@ -1,10 +1,10 @@
-import { ReactNode, useState } from 'react';
 import {
-  ColorSchemeProvider,
   ColorScheme,
+  ColorSchemeProvider,
   MantineProvider as MP,
 } from '@mantine/core';
 import { setCookie } from 'cookies-next';
+import { ReactNode, useState } from 'react';
 
 type MantineProviderProps = {
   children: ReactNode;
@@ -23,6 +23,7 @@ export const MantineProvider = ({
     // when color scheme is updated save it to cookie
     setCookie('mantine-color-scheme', nextColorScheme, {
       maxAge: 60 * 60 * 24 * 30,
+      sameSite: true,
     });
   };
   return (
