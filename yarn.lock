@@ -474,6 +474,13 @@
   dependencies:
     "@mantine/utils" "5.2.3"
 
+"@mantine/spotlight@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@mantine/spotlight/-/spotlight-5.2.3.tgz#096ca0b69eee15c3f3f1972334379f4589b54402"
+  integrity sha512-QbuEI2MdzrZWcyLkhytw8nF4zcqV/oJkJ9Nw3Iv4g3dZVaKyLZ197LAaszkcjZd2oWrxUfMT3Evviw7NW/ThxA==
+  dependencies:
+    "@mantine/utils" "5.2.3"
+
 "@mantine/ssr@5.2.3":
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/@mantine/ssr/-/ssr-5.2.3.tgz#17928a6b86dee1aeff017da66f159e4c83446c0e"

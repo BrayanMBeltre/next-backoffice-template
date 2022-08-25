@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 
 import MantineProvider from '@/lib/providers/MantineProvider';
+import SpotlightProvider from '@/lib/providers/SpotlightProvider';
 
 import { RouterTransition } from '@/components/common/Layouts/RouterTransition';
 
@@ -34,7 +35,9 @@ const App = (props: AppPropsWithLayout) => {
       </Head>
       <MantineProvider colorScheme={colorScheme}>
         <RouterTransition />
-        {getLayout(<Component {...pageProps} />)}
+        <SpotlightProvider>
+          {getLayout(<Component {...pageProps} />)}
+        </SpotlightProvider>
       </MantineProvider>
     </>
   );

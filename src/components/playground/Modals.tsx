@@ -1,0 +1,28 @@
+import { Button, Group, Text } from '@mantine/core';
+import { openConfirmModal } from '@mantine/modals';
+import React from 'react';
+
+export const Modals = () => {
+  const openModal = () =>
+    openConfirmModal({
+      title: 'Please confirm your action',
+      children: (
+        <Text size='sm'>
+          This action is so important that you are required to confirm it with a
+          modal. Please click one of these buttons to proceed.
+        </Text>
+      ),
+      labels: { confirm: 'Confirm', cancel: 'Cancel' },
+      onCancel: () => console.log('Cancel'),
+      onConfirm: () => console.log('Confirmed'),
+    });
+
+  return (
+    <>
+      <div>Modals</div>
+      <Group position='center'>
+        <Button onClick={openModal}>Open confirm modal</Button>
+      </Group>
+    </>
+  );
+};

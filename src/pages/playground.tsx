@@ -1,30 +1,34 @@
 import { Button, Group } from '@mantine/core';
-import {
-  decrementNavigationProgress,
-  incrementNavigationProgress,
-  resetNavigationProgress,
-  setNavigationProgress,
-  startNavigationProgress,
-  stopNavigationProgress,
-} from '@mantine/nprogress';
+import { openSpotlight } from '@mantine/spotlight';
 import type { ReactElement } from 'react';
 
 import Layout from '@/components/common/Layouts/Layout';
+import { Buttons } from '@/components/playground/Buttons';
+import { Dropzone } from '@/components/playground/Dropzone';
+import { Modals } from '@/components/playground/Modals';
+import { NavigationProgress } from '@/components/playground/NavigationProgress';
+import { Notifications } from '@/components/playground/Notifications';
+import Table from '@/components/playground/Table';
+
+import { users } from '../data/mocks/users';
 
 const PlaygroundPage = () => {
   return (
     <>
-      <div>PlayGround</div>
+      <Notifications />
+      <NavigationProgress />
+      <Modals />
+      <Dropzone />
+
+      <div>Spotlight</div>
       <Group position='center'>
-        <Button onClick={() => incrementNavigationProgress(10)}>Add 10%</Button>
-        <Button color='red' onClick={() => decrementNavigationProgress(10)}>
-          Decrease 10%
-        </Button>
-        <Button onClick={() => setNavigationProgress(50)}>Set 50%</Button>
-        <Button onClick={() => startNavigationProgress()}>Start</Button>
-        <Button onClick={() => stopNavigationProgress()}>Stop</Button>
-        <Button onClick={() => resetNavigationProgress()}>Reset</Button>
+        <Button onClick={openSpotlight}>Open spotlight</Button>
       </Group>
+
+      <Buttons />
+
+      <div>Table</div>
+      <Table data={users} />
     </>
   );
 };

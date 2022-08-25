@@ -5,6 +5,7 @@
       "@/lib/*": ["src/lib/*"],
       "@/theme/*": ["src/theme/*"],
       "@/assets/*": ["src/assets/*"],
+      "@/data/*": ["src/data/*"],
       "@/components/*": ["src/components/*"]
     },
     "target": "es5",

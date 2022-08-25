@@ -3,6 +3,8 @@ import {
   ColorSchemeProvider,
   MantineProvider as MP,
 } from '@mantine/core';
+import { ModalsProvider } from '@mantine/modals';
+import { NotificationsProvider } from '@mantine/notifications';
 import { setCookie } from 'cookies-next';
 import { ReactNode, useState } from 'react';
 
@@ -29,7 +31,9 @@ export const MantineProvider = ({
   return (
     <ColorSchemeProvider colorScheme={cs} toggleColorScheme={toggleColorScheme}>
       <MP theme={{ colorScheme: cs }} withGlobalStyles withNormalizeCSS>
-        {children}
+        <ModalsProvider>
+          <NotificationsProvider>{children}</NotificationsProvider>
+        </ModalsProvider>
       </MP>
     </ColorSchemeProvider>
   );
