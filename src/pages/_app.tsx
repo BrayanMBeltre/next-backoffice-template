@@ -5,6 +5,8 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 
+import '@/theme/globals.css';
+
 import MantineProvider from '@/lib/providers/MantineProvider';
 import SpotlightProvider from '@/lib/providers/SpotlightProvider';
 
@@ -47,4 +49,5 @@ App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
   // get color scheme from cookie
   colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
 });
+
 export default App;

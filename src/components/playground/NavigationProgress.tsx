@@ -11,7 +11,6 @@ import {
 export const NavigationProgress = () => {
   return (
     <>
-      <div>Navigation progress</div>
       <Group position='center'>
         <Button onClick={() => incrementNavigationProgress(10)}>Add 10%</Button>
         <Button color='red' onClick={() => decrementNavigationProgress(10)}>

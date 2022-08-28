@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -22,6 +24,7 @@
     "@mantine/notifications": "^5.2.3",
     "@mantine/nprogress": "^5.2.3",
     "@mantine/spotlight": "^5.2.3",
+    "@next/bundle-analyzer": "^12.2.5",
     "@tabler/icons": "^1.86.0",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.5",

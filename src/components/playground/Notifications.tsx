@@ -5,7 +5,6 @@ import { IconX } from '@tabler/icons';
 export const Notifications = () => {
   return (
     <>
-      <div>Notifications</div>
       <Group position='center'>
         <Button
           variant='outline'

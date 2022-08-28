@@ -1,6 +1,13 @@
-import { AppShell, useMantineTheme } from '@mantine/core';
+import {
+  AppShell,
+  Footer as MantineFooter,
+  useMantineTheme,
+} from '@mantine/core';
 import React, { ReactElement, useState } from 'react';
 
+import { footerLinks } from '@/data/mocks/footerLinks';
+
+import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
 
@@ -33,7 +40,8 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       }
       navbar={<Navbar opened={opened} />}
     >
-      {children}
+      <div className='h-full'>{children}</div>
+      <Footer data={footerLinks} />
     </AppShell>
   );
 };

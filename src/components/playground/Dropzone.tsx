@@ -22,7 +22,6 @@ export const Dropzone = () => {
 
   return (
     <>
-      <div>Dropzone</div>
       <Group position='center'>
         <MantineDropzone accept={IMAGE_MIME_TYPE} onDrop={setFiles}>
           <Text align='center'>Drop images here</Text>

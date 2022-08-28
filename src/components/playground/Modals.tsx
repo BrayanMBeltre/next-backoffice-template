@@ -19,7 +19,6 @@ export const Modals = () => {
 
   return (
     <>
-      <div>Modals</div>
       <Group position='center'>
         <Button onClick={openModal}>Open confirm modal</Button>
       </Group>
