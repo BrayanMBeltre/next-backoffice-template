@@ -9,7 +9,15 @@ module.exports = {
     preflight: false,
   },
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '500px',
+        sm: '769px',
+        md: '1000px',
+        lg: '1200px',
+        xl: '1400px',
+      },
+    },
   },
   plugins: [],
 };

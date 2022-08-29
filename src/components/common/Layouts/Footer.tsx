@@ -4,6 +4,7 @@ import {
   createStyles,
   Group,
   Text,
+  useMantineColorScheme,
 } from '@mantine/core';
 import {
   IconBrandInstagram,
@@ -11,7 +12,7 @@ import {
   IconBrandYoutube,
 } from '@tabler/icons';
 
-import Logo from './Logo';
+import Logo from '../Logo';
 
 const useStyles = createStyles((theme) => ({
   footer: {

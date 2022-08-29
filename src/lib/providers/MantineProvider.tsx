@@ -21,13 +21,16 @@ export const MantineProvider = ({
 
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (cs === 'dark' ? 'light' : 'dark');
+
     setCs(nextColorScheme);
+
     // when color scheme is updated save it to cookie
     setCookie('mantine-color-scheme', nextColorScheme, {
       maxAge: 60 * 60 * 24 * 30,
       sameSite: true,
     });
   };
+
   return (
     <ColorSchemeProvider colorScheme={cs} toggleColorScheme={toggleColorScheme}>
       <MP theme={{ colorScheme: cs }} withGlobalStyles withNormalizeCSS>

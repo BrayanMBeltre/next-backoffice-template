@@ -1,8 +1,4 @@
-import {
-  AppShell,
-  Footer as MantineFooter,
-  useMantineTheme,
-} from '@mantine/core';
+import { AppShell, useMantineTheme } from '@mantine/core';
 import React, { ReactElement, useState } from 'react';
 
 import { footerLinks } from '@/data/mocks/footerLinks';

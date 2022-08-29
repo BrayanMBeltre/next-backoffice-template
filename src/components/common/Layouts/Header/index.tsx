@@ -1,12 +1,22 @@
 import {
   Burger,
+  createStyles,
+  Group,
   Header as MantineHeader,
   MantineTheme,
   MediaQuery,
-  Text,
 } from '@mantine/core';
 
-import { ColorSchemeToggle } from './ColorSchemeToggle';
+import UserMenu from '../UserMenu';
+import UserButton from '../UserMenu/UserButton';
+import Logo from '../../Logo';
+
+const useStyles = createStyles((theme) => ({
+  header: {
+    backgroundColor:
+      theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+  },
+}));
 
 type HeaderProps = {
   opened: boolean;
@@ -14,7 +24,9 @@ type HeaderProps = {
   theme: MantineTheme;
 };
 
-export const Header = ({ opened, setOpened, theme }: HeaderProps) => {
+export const Header = ({ opened, setOpened }: HeaderProps) => {
+  const { theme } = useStyles();
+
   return (
     <MantineHeader height={70} p='md'>
       <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
@@ -28,8 +40,14 @@ export const Header = ({ opened, setOpened, theme }: HeaderProps) => {
           />
         </MediaQuery>
 
-        <Text>Application header</Text>
-        <ColorSchemeToggle />
+        <Logo className='w-[300px] py-4' />
+
+        <Group position='apart' className='w-full'>
+          <div />
+          <div className='hidden sm:block'>
+            <UserMenu />
+          </div>
+        </Group>
       </div>
     </MantineHeader>
   );

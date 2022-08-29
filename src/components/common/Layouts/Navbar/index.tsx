@@ -1,5 +1,6 @@
 import {
   createStyles,
+  MediaQuery,
   Navbar as MantineNavbar,
   ScrollArea,
 } from '@mantine/core';
@@ -15,6 +16,7 @@ import {
 } from '@tabler/icons';
 
 import { LinksGroup, LinksGroupProps } from './NavbarLinksGroup';
+import UserMenu from '../UserMenu';
 
 const mockdata: Array<LinksGroupProps> = [
   { label: 'Dashboard', href: '/', icon: IconGauge },
@@ -88,7 +90,7 @@ const Navbar = ({ opened }: NavbarProps) => {
   return (
     <MantineNavbar
       hiddenBreakpoint='sm'
-      width={{ sm: 300, lg: 400 }}
+      width={{ sm: 300 }}
       p='md'
       hidden={!opened}
       className={classes.navbar}
@@ -100,6 +102,10 @@ const Navbar = ({ opened }: NavbarProps) => {
       >
         <div className={classes.linksInner}>{links}</div>
       </MantineNavbar.Section>
+
+      <div className='sm:hidden'>
+        <UserMenu />
+      </div>
     </MantineNavbar>
   );
 };

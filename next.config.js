@@ -12,11 +12,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: 'standalone',
-  compiler: {
-    removeConsole: {
-      exclude: ['error'],
-    },
-  },
+  // compiler: {
+  //   removeConsole: {
+  //     exclude: ['error'],
+  //   },
+  // },
   images: {
     domains: ['i.redd.it'],
   },
