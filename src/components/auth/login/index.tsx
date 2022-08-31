@@ -2,14 +2,10 @@ import {
   Anchor,
   BackgroundImage,
   Button,
-  Checkbox,
   Group,
   Paper,
   PasswordInput,
-  Text,
   TextInput,
-  Title,
-  useMantineColorScheme,
 } from '@mantine/core';
 
 import Logo from '@/components/common/Logo';
@@ -22,7 +18,7 @@ export const AuthenticationTitle = () => {
       <div className='flex flex-col items-center justify-center h-screen '>
         <div className='w-full max-w-md'>
           <div className='flex justify-center mb-8'>
-            <Logo />
+            <Logo logo='gob-do-logo-white' />
           </div>
           <Paper withBorder shadow='md' p={30} mt={30} radius='md'>
             <TextInput label='Email' placeholder='you@mantine.dev' required />

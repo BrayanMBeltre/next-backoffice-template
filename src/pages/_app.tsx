@@ -35,6 +35,7 @@ const App = (props: AppPropsWithLayout) => {
           content='minimum-scale=1, initial-scale=1, width=device-width'
         />
       </Head>
+
       <MantineProvider colorScheme={colorScheme}>
         <RouterTransition />
         <SpotlightProvider>

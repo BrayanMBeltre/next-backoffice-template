@@ -22,4 +22,11 @@ export const stats: Array<Stats> = [
     color: 'red',
     icon: 'down',
   },
+  {
+    label: 'Others',
+    stats: '24,735',
+    progress: 100,
+    color: 'red',
+    icon: 'up',
+  },
 ];

@@ -25,15 +25,15 @@ const logos = {
 
 export type LogoProps = {
   className?: string;
-  logo?: keyof typeof defaultLogos;
+  logo?: keyof typeof defaultLogos | string;
   href?: string;
 };
 
 export const Logo = ({ className, logo, href }: LogoProps) => {
   const { colorScheme } = useMantineColorScheme();
 
-  const getLogo = (logoName: keyof typeof defaultLogos) => {
-    let newLogo: keyof typeof logos = logoName;
+  const getLogo = (logoName: keyof typeof defaultLogos | string) => {
+    let newLogo = logoName;
 
     if (colorScheme === 'dark') {
       const exist = whiteLogos[`${logoName}-white` as keyof typeof whiteLogos];
@@ -43,7 +43,7 @@ export const Logo = ({ className, logo, href }: LogoProps) => {
       }
     }
 
-    return logos[newLogo];
+    return logos[newLogo as keyof typeof logos];
   };
 
   return (

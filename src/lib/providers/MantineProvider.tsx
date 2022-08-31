@@ -24,6 +24,12 @@ export const MantineProvider = ({
 
     setCs(nextColorScheme);
 
+    // if (cs === 'dark') {
+    //   document.documentElement.classList.remove('dark');
+    // } else {
+    //   document.documentElement.classList.add('dark');
+    // }
+
     // when color scheme is updated save it to cookie
     setCookie('mantine-color-scheme', nextColorScheme, {
       maxAge: 60 * 60 * 24 * 30,
@@ -35,7 +41,9 @@ export const MantineProvider = ({
     <ColorSchemeProvider colorScheme={cs} toggleColorScheme={toggleColorScheme}>
       <MP theme={{ colorScheme: cs }} withGlobalStyles withNormalizeCSS>
         <ModalsProvider>
-          <NotificationsProvider>{children}</NotificationsProvider>
+          <NotificationsProvider>
+            <div className={cs === 'dark' ? 'dark' : ''}>{children}</div>
+          </NotificationsProvider>
         </ModalsProvider>
       </MP>
     </ColorSchemeProvider>

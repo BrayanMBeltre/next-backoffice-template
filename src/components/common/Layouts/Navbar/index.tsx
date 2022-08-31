@@ -102,7 +102,6 @@ const Navbar = ({ opened }: NavbarProps) => {
       >
         <div className={classes.linksInner}>{links}</div>
       </MantineNavbar.Section>
-
       <div className='sm:hidden'>
         <UserMenu />
       </div>

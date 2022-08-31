@@ -1,10 +1,14 @@
 import {
+  Box,
   Center,
+  clsx,
+  createStyles,
   Group,
   Paper,
   RingProgress,
   SimpleGrid,
   Text,
+  useMantineTheme,
 } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons';
 
@@ -25,11 +29,24 @@ const icons = {
   down: IconArrowDownRight,
 };
 
+const useStyles = createStyles((theme) => ({
+  color: {
+    backgroundColor:
+      theme.colorScheme === 'dark'
+        ? theme.colors.dark[3]
+        : theme.colors.blue[1],
+  },
+}));
+
 export const StatsCards = ({ data }: StatsRingProps) => {
+  const { theme } = useStyles();
+  const { colors } = useMantineTheme();
+
   const stats = data.map((stat) => {
     const Icon = icons[stat.icon];
+
     return (
-      <Paper withBorder radius='md' p='xs' key={stat.label}>
+      <Paper withBorder radius='md' key={stat.label}>
         <Group>
           <RingProgress
             size={80}
@@ -43,20 +60,26 @@ export const StatsCards = ({ data }: StatsRingProps) => {
             }
           />
 
-          <div>
-            <Text color='dimmed' size='xs' transform='uppercase' weight={700}>
-              {stat.label}
-            </Text>
-            <Text weight={700} size='xl'>
-              {stat.stats}
-            </Text>
-          </div>
+          <Text weight={700} size='xl'>
+            {stat.stats}
+          </Text>
         </Group>
+
+        <Paper
+          p='sm'
+          mt={40}
+
+          // className={clsx(`bg-[${'red' === 'red' && colors.blue[1]}]`)}
+        >
+          <Text color='white' size='xs' transform='uppercase' weight={700}>
+            {stat.label}
+          </Text>
+        </Paper>
       </Paper>
     );
   });
   return (
-    <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+    <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
       {stats}
     </SimpleGrid>
   );
