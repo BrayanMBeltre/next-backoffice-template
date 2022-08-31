@@ -9,6 +9,7 @@ import {
 } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight, TablerIcon } from '@tabler/icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
@@ -50,6 +51,7 @@ const useStyles = createStyles((theme) => ({
         theme.colorScheme === 'dark'
           ? theme.colors.dark[7]
           : theme.colors.gray[0],
+
       color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     },
   },
@@ -77,8 +79,9 @@ export function LinksGroup({
   icon: Icon,
   initiallyOpened,
 }: LinksGroupProps) {
-  const { classes, theme } = useStyles();
+  const { classes, theme, cx } = useStyles();
   const hasLinks = Array.isArray(links);
+  const { pathname } = useRouter();
 
   const [opened, setOpened] = useState(initiallyOpened || false);
 
@@ -92,7 +95,15 @@ export function LinksGroup({
       passHref
       key={link.label}
     >
-      <Text<'a'> component='a' className={classes.link} href={link.href}>
+      <Text<'a'>
+        component='a'
+        className={cx(
+          classes.link,
+
+          pathname === link.href && 'bg-gray-0 dark:bg-dark-7'
+        )}
+        href={link.href}
+      >
         {link.label}
       </Text>
     </Link>
@@ -102,7 +113,11 @@ export function LinksGroup({
     <>
       <UnstyledButton
         onClick={() => setOpened((o) => !o)}
-        className={classes.control}
+        className={cx(
+          classes.control,
+
+          pathname === href && 'bg-gray-0 dark:bg-dark-7'
+        )}
       >
         <Link
           href={{
