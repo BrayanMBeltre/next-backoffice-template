@@ -5,7 +5,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 
-import '@/theme/globals.css';
+import '@/styles/globals.css';
 
 import MantineProvider from '@/lib/providers/MantineProvider';
 import SpotlightProvider from '@/lib/providers/SpotlightProvider';
@@ -13,6 +13,7 @@ import SpotlightProvider from '@/lib/providers/SpotlightProvider';
 import { RouterTransition } from '@/components/common/Layouts/RouterTransition';
 
 export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
+  // eslint-disable-next-line no-unused-vars
   getLayout?: (page: ReactElement) => ReactNode;
 };
 

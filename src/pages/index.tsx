@@ -1,4 +1,4 @@
-import { Paper, ScrollArea, Text } from '@mantine/core';
+import { Paper, ScrollArea, SimpleGrid, Text } from '@mantine/core';
 import type { ReactElement } from 'react';
 
 import { stats } from '@/data/mocks/stats';

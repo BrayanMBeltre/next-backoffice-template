@@ -1,63 +1,13 @@
 import {
   createStyles,
-  MediaQuery,
   Navbar as MantineNavbar,
   ScrollArea,
 } from '@mantine/core';
-import {
-  IconAdjustments,
-  IconCalendarStats,
-  IconFileAnalytics,
-  IconGauge,
-  IconLock,
-  IconNotes,
-  IconPlayCard,
-  IconPresentationAnalytics,
-} from '@tabler/icons';
 
-import { LinksGroup, LinksGroupProps } from './NavbarLinksGroup';
+import { navbarLinks } from '@/data/mocks/navbarLinks';
+
+import { LinksGroup } from './NavbarLinksGroup';
 import UserMenu from '../UserMenu';
-
-const mockdata: Array<LinksGroupProps> = [
-  { label: 'Dashboard', href: '/', icon: IconGauge },
-  {
-    label: 'Market news',
-    icon: IconNotes,
-    initiallyOpened: true,
-    links: [
-      { label: 'Overview', href: '/page1' },
-      { label: 'Forecasts', href: '/page2' },
-      { label: 'Outlook', href: '/page3' },
-      { label: 'Real time', href: '/page4' },
-    ],
-  },
-  {
-    label: 'Releases',
-    icon: IconCalendarStats,
-    links: [
-      { label: 'Upcoming releases', href: '/page1' },
-      { label: 'Previous releases', href: '/page2' },
-      { label: 'Releases schedule', href: '/page3' },
-    ],
-  },
-  { label: 'Analytics', href: '/page1', icon: IconPresentationAnalytics },
-  { label: 'Contracts', href: '/page2', icon: IconFileAnalytics },
-  { label: 'Settings', href: '/page3', icon: IconAdjustments },
-  {
-    label: 'Security',
-    icon: IconLock,
-    links: [
-      { label: 'Enable 2FA', href: '/page1' },
-      { label: 'Change password', href: '/page2' },
-      { label: 'Recovery codes', href: '/page3' },
-    ],
-  },
-  {
-    label: 'Playground',
-    href: '/playground',
-    icon: IconPlayCard,
-  },
-];
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -83,7 +33,7 @@ type NavbarProps = {
 const Navbar = ({ opened }: NavbarProps) => {
   const { classes } = useStyles();
 
-  const links = mockdata.map((item) => (
+  const links = navbarLinks.map((item) => (
     <LinksGroup key={item.label} {...item} />
   ));
 

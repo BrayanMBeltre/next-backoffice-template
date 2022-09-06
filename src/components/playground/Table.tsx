@@ -1,4 +1,6 @@
 import {
+  ActionIcon,
+  Button,
   Center,
   createStyles,
   Group,
@@ -12,8 +14,14 @@ import { keys } from '@mantine/utils';
 import {
   IconChevronDown,
   IconChevronUp,
+  IconFileExport,
+  IconFileImport,
+  IconPrinter,
   IconSearch,
   IconSelector,
+  IconSettings,
+  IconTableExport,
+  IconTableImport,
 } from '@tabler/icons';
 import { useState } from 'react';
 
@@ -141,13 +149,19 @@ export const Table = ({ data }: TableSortProps) => {
 
   return (
     <ScrollArea>
-      <TextInput
-        placeholder='Search by any field'
-        mb='md'
-        icon={<IconSearch size={14} stroke={1.5} />}
-        value={search}
-        onChange={handleSearchChange}
-      />
+      <Group position='apart'>
+        <TextInput
+          placeholder='Search by any field'
+          icon={<IconSearch size={14} stroke={1.5} />}
+          value={search}
+          onChange={handleSearchChange}
+        />
+
+        <ActionIcon>
+          <IconPrinter />
+        </ActionIcon>
+      </Group>
+
       <MantineTable
         horizontalSpacing='md'
         verticalSpacing='xs'

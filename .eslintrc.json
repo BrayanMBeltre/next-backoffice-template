@@ -14,13 +14,13 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-unused-vars": 0,
     "no-unused-vars": "warn",
-    "no-console": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
-    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-explicit-any": "off",
     "object-curly-spacing": [2, "always"],
     "new-cap": 0,
     // Sort

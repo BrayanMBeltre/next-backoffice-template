@@ -14,18 +14,13 @@ const items = [
 ));
 
 const IndexPage = () => {
-  const [counter, setCounter] = useState(0);
-
   return (
     <>
+      {/* BreadCrumbs */}
       <Group position='apart'>
         <div />
         <Breadcrumbs>{items}</Breadcrumbs>
       </Group>
-      <p>Page 1</p>
-      <p>{counter}</p>
-      <button onClick={() => setCounter((c) => c + 1)}>+</button>
-      <button onClick={() => setCounter((c) => c - 1)}>-</button>
     </>
   );
 };
